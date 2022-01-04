@@ -1,5 +1,6 @@
 html {
-    background-color: #E5E5E5;
+    background-color: #F8E7D8;
+    padding: 0px 103px;
 }
 
 /* Webfont: Mak-Light */@font-face {
@@ -25,4 +26,9 @@ html {
 @font-face {
     font-family: 'Roboto';
     src: url('./assets/fonts/Roboto-Regular.ttf'); 
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('./assets/fonts/Roboto-Medium.ttf'); 
 }
