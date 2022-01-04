@@ -1,0 +1,76 @@
+.main-info {
+    padding-top: 126.72px;
+}
+
+.upper-info {
+
+    border-top: 1px solid #302F2E;
+    padding-top: 14px;
+
+    border-bottom: 1px solid #302F2E;
+
+}
+
+.info-title {
+
+    height: 102px;
+
+    font-family: Mak;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 101.773px;
+    line-height: 102px;
+
+    color: #302F2E;
+}
+
+.lower-info {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 14px;
+
+    border-bottom: 1px solid #302F2E;
+
+    & > p {
+        width: 295px;
+        height: 72px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+    }
+}
+
+.read-link {
+    
+    display: flex;
+    
+    margin-top: 25.33px;
+
+    & > p {
+        margin-right: 19.13px;
+        
+        width: 214px;
+        height: 33px;
+
+
+        font-family: Roboto Medium;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 150%;
+
+        text-align: right;
+
+        color: #302F2E;
+    }
+}
+
+.arrow-icon {
+    width: 95.87px;
+    height: 38.61px;
+    background-image: url(../../../../assets/icons/arrow.svg);
+}
