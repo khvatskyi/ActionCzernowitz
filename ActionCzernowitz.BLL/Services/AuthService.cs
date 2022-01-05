@@ -24,8 +24,15 @@ namespace ActionCzernowitz.BLL.Services
         public async Task<SignInResult> AuthenticateAsync(LoginDto loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.UserName);
+            
+            if(user == null)
+            {
+                return null;
+            }
 
-            return await _signInManager.PasswordSignInAsync(user, loginModel.Password, loginModel.RememberMe, false);
+            var result = await _signInManager.PasswordSignInAsync(user, loginModel.Password, loginModel.RememberMe, false);
+
+            return result;
         }
 
         public async Task<IdentityResult> CreateAsync(RegistrationDto registrationModel)

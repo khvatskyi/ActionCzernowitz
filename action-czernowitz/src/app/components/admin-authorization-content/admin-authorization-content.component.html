@@ -1,0 +1,16 @@
+<div class="authorization">
+    <div>
+        <label>Ім'я користувача</label>
+        <input type="text" [(ngModel)]="username">
+    </div>
+    <br>
+    <div>
+        <label>Пароль</label>
+        <input type="password" [(ngModel)]="password">
+    </div>
+    <br>
+    <button (click)="onAuthorize()" class="btn btn-primary">Авторизуватись</button>
+    <br>
+    <br>
+    <p class="text-danger">{{validationError}}</p>
+</div>

@@ -27,14 +27,14 @@ namespace ActionCzernowitz.API.Controllers
         {
             var result = await _authService.AuthenticateAsync(loginModel);
 
-            if (result.Succeeded)
+            if (result != null && result.Succeeded)
             {
                 var user = _userService.GetByNameAsync(loginModel.UserName);
 
-                return Ok(_tokenService.GenerateJwtAccessToken(user.Id.ToString()));
+                return Ok(new { Successful = true, Token = _tokenService.GenerateJwtAccessToken(user.Id.ToString()) });
             }
 
-            return BadRequest();
+            return Ok(new { Successful = false, Token = string.Empty });
         }
 
         [HttpPost]

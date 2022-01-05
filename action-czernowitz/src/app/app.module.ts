@@ -17,6 +17,9 @@ import { ContactsContentComponent } from './components/contacts-content/contacts
 import { RulesContentComponent } from './components/rules-content/rules-content.component';
 import { PrivacyContentComponent } from './components/privacy-content/privacy-content.component';
 import { SearchContentComponent } from './components/search-content/search-content.component';
+import { AdminAuthorizationContentComponent } from './components/admin-authorization-content/admin-authorization-content.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,13 @@ import { SearchContentComponent } from './components/search-content/search-conte
     ContactsContentComponent,
     RulesContentComponent,
     PrivacyContentComponent,
-    SearchContentComponent
+    SearchContentComponent,
+    AdminAuthorizationContentComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomeContentComponent},
@@ -47,7 +53,8 @@ import { SearchContentComponent } from './components/search-content/search-conte
       {path: 'contacts', component: ContactsContentComponent},
       {path: 'rules', component: RulesContentComponent},
       {path: 'privacy', component: PrivacyContentComponent},
-      {path: 'search', component: SearchContentComponent}
+      {path: 'search', component: SearchContentComponent},
+      {path: 'admin', component: AdminAuthorizationContentComponent}
     ])
   ],
   providers: [],
