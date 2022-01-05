@@ -21,22 +21,25 @@
         color: #302F2E;
     }
 
-    & > div {
-        display: flex;
-    }
+    & > a {
 
-    & > div > p {
-        font-family: Roboto Medium;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 150%;
+        & > div {
+            display: flex;
 
-        margin-right: 18.64px;
-
-        text-align: right;
-
-        color: #302F2E;
+            & > p {
+                font-family: Roboto Medium;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 150%;
+        
+                margin-right: 18.64px;
+        
+                text-align: right;
+        
+                color: #302F2E;
+            }
+        }
     }
 }
 
