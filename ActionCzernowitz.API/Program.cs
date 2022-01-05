@@ -65,8 +65,9 @@ services.AddAutoMapper(typeof(UserMapperProfile).Assembly);
 
 #region Services
 
-services.AddScoped<IUserService, UserService>();
 services.AddScoped<IAuthService, AuthService>();
+services.AddScoped<INewService, NewService>();
+services.AddScoped<IUserService, UserService>();
 services.AddScoped<IJwtTokenService, JwtTokenService>();
 
 #endregion Services
