@@ -9,9 +9,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class AuthorizationService {
 
   url: string = 'https://localhost:7274/api/Authentication/Authorize'
-
+  
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) { }
-
+  
   Authorize(user: User) {
     return this.http.post(this.url, user);
   }
