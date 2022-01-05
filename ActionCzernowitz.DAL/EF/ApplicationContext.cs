@@ -14,6 +14,8 @@ namespace ActionCzernowitz.DAL.EF
             Database.EnsureCreated();
         }
 
+        public virtual DbSet<New> News { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.EnableSensitiveDataLogging();
