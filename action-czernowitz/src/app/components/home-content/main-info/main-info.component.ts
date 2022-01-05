@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-info',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-info.component.scss']
 })
 export class MainInfoComponent implements OnInit {
+
+  @Input() isAuthorized: boolean = false;
 
   constructor() { }
 

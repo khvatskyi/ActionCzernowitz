@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-last-news',
@@ -24,7 +24,9 @@ export class LastNewsComponent implements OnInit {
     description: "10 грудня о 19:00 у культурно-мистецькому центрі імені Івана Миколайчука відбудеться прем‘єра фільму «Хто ми? Психоаналіз українців»..."
   }
 ] 
-  
+
+  @Input() isAuthorized: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

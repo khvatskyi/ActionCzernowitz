@@ -20,6 +20,10 @@ import { SearchContentComponent } from './components/search-content/search-conte
 import { AdminAuthorizationContentComponent } from './components/admin-authorization-content/admin-authorization-content.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MagazineAddComponent } from './components/magazines-content/magazine-add/magazine-add.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+import { NewAddComponent } from './components/news-content/new-add/new-add.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     RulesContentComponent,
     PrivacyContentComponent,
     SearchContentComponent,
-    AdminAuthorizationContentComponent
+    AdminAuthorizationContentComponent,
+    MagazineAddComponent,
+    NewAddComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'home', component: HomeContentComponent},
       {path: 'about-us', component: AboutUsContentComponent},
       {path: 'news', component: NewsContentComponent},
+      {path: 'news/add', component: NewAddComponent, canActivate: [AuthGuardService]},
       {path: 'magazines', component: MagazinesContentComponent},
+      {path: 'magazines/add', component: MagazineAddComponent, canActivate: [AuthGuardService]},
       {path: 'contacts', component: ContactsContentComponent},
       {path: 'rules', component: RulesContentComponent},
       {path: 'privacy', component: PrivacyContentComponent},
@@ -57,7 +65,10 @@ import { HttpClientModule } from '@angular/common/http';
       {path: 'admin', component: AdminAuthorizationContentComponent}
     ])
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

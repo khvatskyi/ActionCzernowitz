@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 
 @Component({
   selector: 'app-home-content',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeContentComponent implements OnInit {
 
-  constructor() { }
+  isAuthorized: boolean = false;
+
+  constructor(private authService: AuthorizationService) {
+    this.isAuthorized = authService.IsAuthorized();
+   }
 
   ngOnInit(): void {
   }
