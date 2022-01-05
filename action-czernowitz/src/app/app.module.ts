@@ -8,7 +8,7 @@ import { MainInfoComponent } from './components/home-content/main-info/main-info
 import { LastNewsComponent } from './components/home-content/last-news/last-news.component';
 import { DirectionsComponent } from './components/home-content/directions/directions.component';
 import { ActionAbbreviationComponent } from './components/home-content/action-abbreviation/action-abbreviation.component';
-import { ContactsComponent } from './components/home-content/contacts/contacts.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { ContactsComponent } from './components/home-content/contacts/contacts.c
     LastNewsComponent,
     DirectionsComponent,
     ActionAbbreviationComponent,
-    ContactsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule
