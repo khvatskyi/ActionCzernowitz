@@ -1,6 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthorizationService } from 'src/app/services/authorization.service';
 
@@ -15,7 +14,7 @@ export class AdminAuthorizationContentComponent implements OnInit {
   password: String = "";
   validationError: String = "";
 
-  constructor(private authorizationService: AuthorizationService) { }
+  constructor(private authorizationService: AuthorizationService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +28,8 @@ export class AdminAuthorizationContentComponent implements OnInit {
 
   validate(data: any) {
     if(data?.successful) {
-      this.validationError = "Правильний логін та пароль";
+      this.authorizationService.SignIn(data?.token);
+      this.router.navigate(['home']);
     } else {
       this.validationError = "Неправильний логін чи пароль";
     }

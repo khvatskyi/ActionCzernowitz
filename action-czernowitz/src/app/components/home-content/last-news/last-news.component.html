@@ -1,6 +1,12 @@
 <div class="last-news">
     <div class="title">
         <h3>Останні новини</h3>
+        <a *ngIf="isAuthorized" class="text-decoration-none" href="#" routerLink="/news/add">
+            <div>
+                <p>Додати новину</p>
+                <div class="right-arrow"></div>
+            </div>
+        </a>
         <a class="text-decoration-none" href="#" routerLink="/news">
             <div>
                 <p>Всі новини</p>
