@@ -62,6 +62,7 @@ services.AddSwaggerGen(c =>
     c.OperationFilter<AuthOperationFilter>();
 });
 services.AddAutoMapper(typeof(UserMapperProfile).Assembly);
+services.AddCors();
 
 #region Services
 
@@ -136,6 +137,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(builder => builder.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseAuthorization();
 
