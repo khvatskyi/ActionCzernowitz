@@ -24,6 +24,7 @@ import { MagazineAddComponent } from './components/magazines-content/magazine-ad
 import { AuthGuardService } from './services/auth-guard.service';
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 import { NewAddComponent } from './components/news-content/new-add/new-add.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { NewAddComponent } from './components/news-content/new-add/new-add.compo
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    PdfViewerModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomeContentComponent},
