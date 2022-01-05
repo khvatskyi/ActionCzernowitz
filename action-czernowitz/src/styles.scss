@@ -1,6 +1,15 @@
 html {
+    
+    margin-left: 103px;
+    margin-right: auto;
+}
+
+body {
     background-color: #F8E7D8;
-    padding: 0px 103px;
+}
+
+* {
+    z-index: 1;
 }
 
 /* Webfont: Mak-Light */@font-face {

@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionAbbreviationComponent implements OnInit {
 
+  letters: any = [{
+    letter: "A",
+    description: "аналіз"
+  },{
+    letter: "С",
+    description: "колектив"
+  },{
+    letter: "T",
+    description: "текст"
+  },{
+    letter: "I",
+    description: "ідейність"
+  },{
+    letter: "O",
+    description: "об'єктивність"
+  },{
+    letter: "N",
+    description: "напрям думок"
+  },]
+
   constructor() { }
 
   ngOnInit(): void {

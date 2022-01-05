@@ -1,1 +1,8 @@
-<p>directions works!</p>
+<div class="directions">
+    <h3 class="title">Напрямки нашої роботи</h3>
+    <div class="list">
+        <div *ngFor="let direction of directions">
+            <p><span class="number">{{direction?.number}}</span><span class="slash">  /  </span><span class="description">{{direction?.title}}</span></p>
+        </div>
+    </div>
+</div>

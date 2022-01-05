@@ -1,5 +1,7 @@
 .main-info {
     padding-top: 126.72px;
+
+    background: radial-gradient(farthest-side circle at right, #FFB876 0%, #F8E7D8 50%);
 }
 
 .upper-info {
@@ -13,8 +15,7 @@
 
 .info-title {
 
-    height: 102px;
-
+    word-wrap: break-word;
     font-family: Mak;
     font-style: normal;
     font-weight: 300;
@@ -27,7 +28,7 @@
 .lower-info {
 
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
 
     margin-top: 14px;
@@ -41,6 +42,10 @@
         font-family: Roboto;
         font-style: normal;
         font-weight: normal;
+    }
+
+    & > h2 {
+        margin-left: 252px;
     }
 }
 
@@ -73,4 +78,6 @@
     width: 95.87px;
     height: 38.61px;
     background-image: url(../../../../assets/icons/arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
