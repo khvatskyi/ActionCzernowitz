@@ -125,7 +125,6 @@ services.AddIdentity<User, IdentityRole<Guid>>(action =>
 var app = builder.Build();
 
 // adding default data to DB.
-
 using var scope = app.Services.CreateScope();
 await DataInitializer.Initialize(scope.ServiceProvider.GetRequiredService<UserManager<User>>());
 
