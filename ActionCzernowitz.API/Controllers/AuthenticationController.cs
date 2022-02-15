@@ -25,16 +25,25 @@ namespace ActionCzernowitz.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Authorize([FromBody] LoginDto loginModel)
         {
-            var result = await _authService.AuthenticateAsync(loginModel);
+            IActionResult result = BadRequest("Incorrect password");
 
-            if (result != null && result.Succeeded)
+            try
             {
-                var user = _userService.GetByNameAsync(loginModel.UserName);
+                var authResult = await _authService.AuthenticateAsync(loginModel);
 
-                return Ok(new { Successful = true, Token = _tokenService.GenerateJwtAccessToken(user.Id.ToString()) });
+                if (authResult.Succeeded)
+                {
+                    var user = _userService.GetByNameAsync(loginModel.UserName);
+
+                    result = Ok(new { Successful = true, Token = _tokenService.GenerateJwtAccessToken(user.Id.ToString()) });
+                }
+            }
+            catch (Exception ex)
+            {
+                result = BadRequest(new { Successful = false, Token = string.Empty, Message = ex.Message });
             }
 
-            return Ok(new { Successful = false, Token = string.Empty });
+            return result;
         }
 
         [HttpPost]

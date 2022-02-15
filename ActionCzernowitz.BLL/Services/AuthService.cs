@@ -24,10 +24,10 @@ namespace ActionCzernowitz.BLL.Services
         public async Task<SignInResult> AuthenticateAsync(LoginDto loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.UserName);
-            
-            if(user == null)
+
+            if (user == null)
             {
-                return null;
+                throw new Exception("A user does not exist!");
             }
 
             var result = await _signInManager.PasswordSignInAsync(user, loginModel.Password, loginModel.RememberMe, false);
